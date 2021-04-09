@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "concat": "node ./elements-build.js",
+    "build:elements": "ng build --prod --output-hashing none && npm run concat && http-server 'elements/'"
   },
   "private": true,
   "dependencies": {
@@ -15,11 +17,18 @@
     "@angular/common": "~9.1.9",
     "@angular/compiler": "~9.1.9",
     "@angular/core": "~9.1.9",
+    "@angular/elements": "^11.2.4",
     "@angular/forms": "~9.1.9",
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
+    "@webcomponents/custom-elements": "^1.4.3",
+    "bootstrap": "^4.6.0",
+    "concat": "^1.0.3",
+    "fs-extra": "^9.1.0",
+    "http-server": "^0.12.3",
     "rxjs": "~6.5.4",
+    "rxjs-compat": "^6.6.6",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
